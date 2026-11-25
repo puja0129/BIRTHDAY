@@ -1,0 +1,353 @@
+/* ============================================
+   GLOBALS — Pastel Birthday Scrapbook (Mahir)
+   ============================================ */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  /* Core pastel dreamscape palette */
+  --pastel-pink:      #ffd6e8;
+  --pastel-rose:      #e86f9c;
+  --pastel-lavender:  #e9e0ff;
+  --pastel-lilac:     #9a7ee0;
+  --pastel-blue:      #d8f0ff;
+  --pastel-sky:       #4ca3dd;
+  --pastel-peach:     #ffe2cf;
+  --pastel-coral:     #ee8760;
+  --pastel-mint:      #daf7e8;
+  --pastel-emerald:   #45b683;
+  --pastel-yellow:    #fff4c4;
+  --pastel-butter:    #dda82e;
+  --pastel-turquoise: #d4f7f3;
+  --pastel-teal:      #39b2aa;
+
+  /* Ink & readable text colours */
+  --ink:              #2d1a14;
+  --ink-soft:         #563e34;
+  --text-muted:       #765c50;
+  --cream:            #fffaf6;
+  --warm-white:       #ffffff;
+  --beige:            #4c372d;
+  --beige-soft:       #fff7ef;
+  --white:            #2d1a14;
+  --black:            #fffaf6;
+
+  /* Accents */
+  --gold:             #d79c2d;
+  --gold-soft:        #f5c564;
+  --gold-glow:        rgba(232, 111, 156, 0.16);
+  --lavender:         #8f77d4;
+  --navy-deep:        #f7f0ff;
+  --navy:             #fff6f9;
+  --navy-mid:         #fff3ea;
+
+  /* Typography */
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans:  'Inter', system-ui, -apple-system, sans-serif;
+  --font-hand:  'Caveat', cursive;
+
+  /* Layout */
+  --nav-height: 64px;
+
+  /* Easing */
+  --ease-cinematic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-bounce:    cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  overflow-x: hidden;
+  background: var(--cream);
+}
+
+body {
+  background: linear-gradient(180deg, #fff6fb 0%, #fffaf2 50%, #f3f9ff 100%);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Soft paper grain overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #fff5f8; }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #f294b9, #a48ee6, #74c2ee);
+  border-radius: 99px;
+}
+
+::selection {
+  background: rgba(232, 111, 156, 0.2);
+  color: #2d1a14;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  line-height: 1.18;
+  color: var(--ink);
+}
+
+h1 { font-size: clamp(2.4rem, 6vw, 4.6rem); }
+h2 { font-size: clamp(1.85rem, 4.2vw, 3.1rem); }
+h3 { font-size: clamp(1.25rem, 2.5vw, 1.9rem); }
+
+/* Layout utilities */
+.section-container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 1.4rem;
+}
+
+.section-padding {
+  padding: 5.5rem 0;
+}
+
+/* Text helpers */
+.text-gold   { color: var(--pastel-rose); }
+.text-beige  { color: var(--ink); }
+.text-muted  { color: var(--text-muted); }
+.text-white  { color: var(--ink); }
+.font-serif  { font-family: var(--font-serif); }
+.font-hand   { font-family: var(--font-hand); }
+
+/* Pastel gradient divider */
+.divider-glow {
+  width: 96px;
+  height: 3px;
+  border-radius: 99px;
+  background: linear-gradient(90deg, #ff9ebb, #ffd97d, #8be0c5, #9fc8ff, #c5a3ff);
+  margin: 1.3rem auto;
+}
+
+/* Light frosted scrapbook card */
+.glass-card {
+  background: rgba(255, 255, 255, 0.78);
+  border: 1.5px solid rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow:
+    0 10px 30px rgba(173, 128, 164, 0.12),
+    0 2px 8px rgba(45, 26, 20, 0.04);
+}
+
+/* Primary colourful gradient button */
+.btn-cinematic {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0.9rem 2rem;
+  background: linear-gradient(135deg, #ff8eb8 0%, #ffa97a 52%, #b58ef6 100%);
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  border-radius: 999px;
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: transform 0.25s var(--ease-bounce), box-shadow 0.3s ease, filter 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(232, 111, 156, 0.28);
+}
+
+.btn-cinematic:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 12px 30px rgba(164, 142, 230, 0.38);
+  filter: brightness(1.03);
+}
+
+.btn-cinematic:active {
+  transform: scale(0.97);
+}
+
+/* Secondary pill button */
+.btn-pastel {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.35rem;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1.5px solid rgba(154, 126, 224, 0.35);
+  border-radius: 999px;
+  color: var(--ink);
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(154, 126, 224, 0.12);
+}
+
+.btn-pastel:hover {
+  background: linear-gradient(135deg, #fff0f7, #f0ebff);
+  border-color: var(--pastel-lilac);
+  transform: translateY(-1px);
+}
+
+/* Section header */
+.section-header {
+  text-align: center;
+  margin-bottom: 2.2rem;
+}
+
+.section-eyebrow {
+  display: inline-block;
+  font-family: var(--font-hand);
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #b05c84;
+  background: rgba(255, 255, 255, 0.72);
+  padding: 0.25rem 1rem;
+  border-radius: 999px;
+  border: 1px dashed rgba(232, 111, 156, 0.4);
+  margin-bottom: 0.85rem;
+}
+
+.section-subtitle {
+  margin-top: 0.75rem;
+  font-size: 0.98rem;
+  color: var(--ink-soft);
+  max-width: 580px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.65;
+}
+
+/* Floating deco layer */
+.float-deco-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Shared pastel wave transitions between sections */
+.section-wave {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 44px;
+  pointer-events: none;
+  overflow: hidden;
+  line-height: 0;
+}
+
+/* Lightbox shared */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(48, 30, 52, 0.62);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  z-index: 450;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.2rem;
+}
+
+.lightbox__meta {
+  padding: 1.1rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  background: #ffffff;
+}
+
+.lightbox__caption {
+  font-family: var(--font-hand);
+  font-size: 1.35rem;
+  color: var(--ink);
+  line-height: 1.35;
+}
+
+.lightbox__date {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.lightbox__placeholder {
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  background: linear-gradient(135deg, #fff0f6, #eef7ff, #fff8dc);
+  font-size: 1rem;
+  color: var(--ink-soft);
+  text-align: center;
+  padding: 2rem;
+}
+
+.lightbox__placeholder span { font-size: 3.6rem; }
+.lightbox__placeholder p { font-size: 0.9rem; line-height: 1.6; }
+.lightbox__placeholder code {
+  font-size: 0.78rem;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  color: #b05c84;
+  display: inline-block;
+  margin-top: 0.4rem;
+}
+
+.lightbox__close {
+  position: absolute;
+  top: 0.85rem;
+  right: 0.85rem;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1.5px solid rgba(232, 111, 156, 0.28);
+  color: var(--ink);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: transform 0.2s ease, background 0.2s ease;
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(45, 26, 20, 0.12);
+}
+
+.lightbox__close:hover {
+  background: #ffe3ee;
+  transform: scale(1.08);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section-padding { padding: 4rem 0; }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

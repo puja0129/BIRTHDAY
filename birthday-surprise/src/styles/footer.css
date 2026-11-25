@@ -1,0 +1,149 @@
+.footer {
+  background: linear-gradient(180deg, #fff5fa 0%, #fff8eb 55%, #eef9ff 100%);
+  position: relative;
+  padding: 3.8rem 1.5rem 3.2rem;
+}
+
+.footer__rainbow-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #ff8eb8, #ffd97d, #7de2c4, #84c5ff, #b58ef6);
+}
+
+.footer__inner { text-align: center; }
+
+.footer__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.footer__tagline {
+  font-size: 1.45rem;
+  color: #3d241c;
+  line-height: 1.5;
+  max-width: 560px;
+}
+
+.footer__divider {
+  width: 64px;
+  height: 2px;
+  border-radius: 99px;
+  background: linear-gradient(90deg, #ff9ebb, #b58ef6);
+}
+
+.footer__hint {
+  font-size: 0.85rem;
+  color: #765c50;
+}
+
+.footer__heart {
+  background: #ffffff;
+  border: 1.5px solid rgba(232, 111, 156, 0.35);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  font-size: 1.6rem;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 6px 18px rgba(232, 111, 156, 0.2);
+}
+
+.footer__made-with {
+  font-size: 0.88rem;
+  color: #563e34;
+}
+
+.footer__copy {
+  font-size: 0.78rem;
+  color: #8c7265;
+  letter-spacing: 0.06em;
+}
+
+/* Secret modal */
+.secret-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(54, 34, 58, 0.56);
+  backdrop-filter: blur(14px);
+  z-index: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+}
+
+.secret-modal__card {
+  max-width: 540px;
+  width: 100%;
+  max-height: 88vh;
+  overflow-y: auto;
+  background: linear-gradient(160deg, #fffdf9 0%, #fff3f8 100%);
+  border: 2px solid rgba(255, 255, 255, 0.95);
+  border-radius: 24px;
+  padding: 2.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.35rem;
+  position: relative;
+  box-shadow: 0 24px 70px rgba(45, 26, 20, 0.26);
+}
+
+.secret-modal__paper-lines {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(transparent, transparent 27px, rgba(232, 111, 156, 0.07) 27px, rgba(232, 111, 156, 0.07) 28px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.secret-modal__top {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  position: relative;
+  z-index: 1;
+}
+
+.secret-modal__icon { font-size: 2rem; }
+
+.secret-modal__badge {
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #b04a78;
+  background: #ffe6f0;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+}
+
+.secret-modal__text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.95rem;
+  position: relative;
+  z-index: 1;
+}
+
+.secret-para {
+  font-size: 0.98rem;
+  color: #3d241c;
+  line-height: 1.78;
+}
+
+.secret-para--lead {
+  font-size: 1.45rem;
+  color: #b04a78;
+}
+
+.secret-close {
+  align-self: flex-end;
+  position: relative;
+  z-index: 1;
+}

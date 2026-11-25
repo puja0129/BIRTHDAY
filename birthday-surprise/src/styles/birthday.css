@@ -1,0 +1,226 @@
+.birthday-section {
+  background: linear-gradient(155deg, #dff8ec 0%, #e4f1ff 38%, #ffe7f3 72%, #fff5cf 100%);
+  overflow: hidden;
+  position: relative;
+}
+
+.birthday-deco {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.72;
+}
+
+.birthday-canvas {
+  width: 100%;
+  height: 46vh;
+  min-height: 300px;
+  max-height: 430px;
+}
+
+.birthday-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.2rem;
+  margin-top: 0.75rem;
+}
+
+.birthday-texts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.05rem;
+  text-align: center;
+  max-width: 600px;
+}
+
+.birthday-text {
+  font-family: var(--font-serif);
+  font-size: clamp(1.12rem, 2.4vw, 1.45rem);
+  color: #563e34;
+  font-style: italic;
+}
+
+.birthday-text--special {
+  font-size: clamp(1.35rem, 3vw, 1.85rem);
+  color: #b04a78;
+  font-weight: 600;
+}
+
+.birthday-wish-btn {
+  font-size: 0.98rem;
+  padding: 1rem 2.3rem;
+}
+
+.birthday-final {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.95rem;
+  max-width: 620px;
+  width: 100%;
+  padding: 2.4rem 2rem;
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid #ffffff;
+  box-shadow: 0 18px 46px rgba(232, 111, 156, 0.22);
+}
+
+.birthday-final__title {
+  font-size: clamp(1.9rem, 4.4vw, 2.9rem);
+  color: #b04a78;
+  font-weight: 600;
+}
+
+.birthday-final__sub {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  color: #2d1a14;
+  font-style: italic;
+}
+
+.birthday-final__closer {
+  font-size: 0.98rem;
+  color: #563e34;
+}
+
+.birthday-final__tagline {
+  font-size: 1.5rem;
+  color: #6f4ca8;
+  font-weight: 600;
+}
+
+.birthday-collage {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.35rem;
+  margin-top: 0.6rem;
+}
+
+.birthday-collage__card {
+  width: 185px;
+  background: #ffffff;
+  padding: 8px 8px 12px;
+  border-radius: 14px;
+  box-shadow: 0 10px 26px rgba(45, 26, 20, 0.12);
+  transform: rotate(var(--tilt, 0deg));
+}
+
+.birthday-collage__card img,
+.birthday-collage__card video {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+
+.birthday-collage__card p {
+  text-align: center;
+  font-size: 1.05rem;
+  color: #3d241c;
+  margin-top: 5px;
+}
+
+.birthday-montage-controls {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.6rem;
+}
+
+.confetti-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 999;
+  overflow: hidden;
+}
+
+.confetti-piece { position: absolute; top: 0; }
+
+/* Before You Leave & Virtual Hug Card */
+.before-leave-card {
+  max-width: 680px;
+  width: 100%;
+  margin-top: 1.5rem;
+  padding: 2.3rem 2rem;
+  border-radius: 28px;
+  background: linear-gradient(155deg, rgba(255, 255, 255, 0.94), rgba(255, 236, 246, 0.9));
+  border: 2px solid #ffffff;
+  box-shadow: 0 18px 46px rgba(173, 128, 164, 0.2);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.05rem;
+}
+
+.before-leave__eyebrow {
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #b04a78;
+  background: #ffe6f0;
+  padding: 0.3rem 0.9rem;
+  border-radius: 999px;
+}
+
+.before-leave__title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 3.2vw, 2.1rem);
+  color: #2d1a14;
+}
+
+.before-leave__lines {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  font-size: 0.96rem;
+  color: #4c372d;
+  line-height: 1.72;
+}
+
+.hug-zone {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.85rem;
+  margin-top: 0.4rem;
+}
+
+.hug-hearts-burst {
+  display: flex;
+  gap: 0.6rem;
+  font-size: 1.8rem;
+  pointer-events: none;
+}
+
+.hug-confirmation {
+  background: #ffffff;
+  border: 1.5px dashed #f4a4c4;
+  border-radius: 18px;
+  padding: 0.9rem 1.25rem;
+  box-shadow: 0 8px 22px rgba(232, 111, 156, 0.14);
+}
+
+.hug-confirmation p {
+  font-size: 1.32rem;
+  color: #b04a78;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.hug-confirmation small {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.76rem;
+  color: #765c50;
+}
+
+@media (max-width: 600px) {
+  .before-leave-card { padding: 1.7rem 1.25rem; }
+}

@@ -1,0 +1,470 @@
+/* ===================================================================
+   HERO SECTION — Puju's Dreamy Chaotic Pastel Birthday Opening
+   =================================================================== */
+
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: clip;
+  padding: 4.5rem 1.25rem 3.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #ffdceb 0%, #fff2c4 28%, #dff4ff 58%, #ebdfff 84%, #def9e8 100%);
+}
+
+/* Animated dreamy aura */
+.hero__aurora {
+  position: absolute;
+  inset: -18%;
+  background:
+    radial-gradient(circle at 16% 20%, rgba(255, 173, 209, 0.62) 0%, transparent 45%),
+    radial-gradient(circle at 85% 18%, rgba(164, 214, 255, 0.58) 0%, transparent 45%),
+    radial-gradient(circle at 80% 82%, rgba(212, 186, 255, 0.54) 0%, transparent 48%),
+    radial-gradient(circle at 18% 80%, rgba(255, 222, 145, 0.58) 0%, transparent 48%);
+  background-size: 135% 135%;
+  animation: heroSkyDrift 13s ease-in-out infinite alternate;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes heroSkyDrift {
+  0%   { transform: translate3d(-2%, -2%, 0) scale(1); }
+  100% { transform: translate3d(2%, 2%, 0) scale(1.06); }
+}
+
+.hero__bokeh {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.bokeh-dot {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(32px);
+  opacity: 0.52;
+  animation: bokehFloat 9s ease-in-out infinite alternate;
+}
+
+.bokeh-dot--1 { width: 220px; height: 220px; background: #ffcce1; top: 6%; left: 6%; }
+.bokeh-dot--2 { width: 260px; height: 260px; background: #cbeaff; top: 10%; right: 6%; animation-delay: 2s; }
+.bokeh-dot--3 { width: 200px; height: 200px; background: #ffefaf; bottom: 10%; left: 12%; animation-delay: 4s; }
+.bokeh-dot--4 { width: 240px; height: 240px; background: #d6fae3; bottom: 8%; right: 12%; animation-delay: 1s; }
+
+@keyframes bokehFloat {
+  0%   { transform: translateY(0) scale(1); }
+  100% { transform: translateY(-22px) scale(1.08); }
+}
+
+/* Random floating elements scattered throughout the whole section */
+.hero__scattered {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.hero-float-el {
+  position: absolute;
+  user-select: none;
+  filter: drop-shadow(0 4px 10px rgba(232, 111, 156, 0.18));
+}
+
+/* Main responsive layout stage */
+.hero__stage {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  max-width: 1280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+/* 3D Envelope crown stage */
+.hero__envelope-stage {
+  position: relative;
+  width: 100%;
+  max-width: 680px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.hero__canvas {
+  width: 100%;
+  height: 270px;
+  cursor: pointer;
+}
+
+.hero__envelope-pill {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1.5px dashed rgba(232, 111, 156, 0.52);
+  border-radius: 999px;
+  padding: 0.45rem 1.15rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #b04a78;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(232, 111, 156, 0.16);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.hero__envelope-pill:hover {
+  transform: translateY(-2px) scale(1.03);
+  background: #fff5fa;
+}
+
+.hero__envelope-pill--open {
+  background: linear-gradient(135deg, #fff0f7, #f2edff);
+  border-style: solid;
+}
+
+.hero__ticket {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  max-width: 540px;
+  background: #fffdf5;
+  border: 2px dashed #f4a4c4;
+  border-radius: 18px;
+  padding: 0.8rem 1.1rem;
+  box-shadow: 0 12px 28px rgba(232, 111, 156, 0.2);
+  text-align: left;
+}
+
+.hero__ticket span { font-size: 1.35rem; flex-shrink: 0; }
+.hero__ticket p { font-size: 0.84rem; color: #3d241c; line-height: 1.48; }
+.hero__ticket strong { color: #b04a78; }
+
+/* Central frosted glass invitation card */
+.hero__card {
+  position: relative;
+  z-index: 8;
+  width: 100%;
+  max-width: 640px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 2px solid rgba(255, 255, 255, 0.95);
+  border-radius: 30px;
+  padding: 2rem 2.1rem;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow:
+    0 20px 55px rgba(173, 128, 164, 0.24),
+    0 4px 14px rgba(45, 26, 20, 0.05),
+    inset 0 0 28px rgba(255, 232, 244, 0.45);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.hero__card-tape {
+  position: absolute;
+  top: -11px;
+  width: 68px;
+  height: 22px;
+  border-radius: 4px;
+  opacity: 0.88;
+  box-shadow: 0 3px 8px rgba(45, 26, 20, 0.08);
+}
+
+.hero__card-tape--left {
+  left: 12%;
+  background: #ffd1e6;
+  transform: rotate(-10deg);
+}
+
+.hero__card-tape--right {
+  right: 12%;
+  background: #cfe9ff;
+  transform: rotate(10deg);
+}
+
+.hero__top-pill {
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #8f4170;
+  background: linear-gradient(135deg, #ffe7f2, #fff4d4);
+  padding: 0.32rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(232, 111, 156, 0.28);
+}
+
+.hero__greeting {
+  font-size: clamp(2.3rem, 5vw, 3.4rem);
+  color: #c24b7c;
+  font-weight: 700;
+  line-height: 1.05;
+  margin-top: 0.1rem;
+}
+
+.hero__hook {
+  font-size: clamp(1.18rem, 2.3vw, 1.48rem);
+  color: #2d1a14;
+  font-style: italic;
+  font-weight: 600;
+  line-height: 1.42;
+}
+
+.hero__story-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  font-size: 0.94rem;
+  color: #4c372d;
+  line-height: 1.7;
+  background: rgba(255, 250, 246, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  padding: 1rem 1.2rem;
+}
+
+.hero__story-body strong {
+  color: #2d1a14;
+  font-weight: 600;
+}
+
+.tag-chip {
+  display: inline-block;
+  padding: 0 7px;
+  border-radius: 8px;
+  font-weight: 600;
+  color: #2d1a14;
+}
+
+.tag-chip--pink     { background: #ffd8ea; }
+.tag-chip--peach    { background: #ffe2cc; }
+.tag-chip--lavender { background: #e8ddff; }
+.tag-chip--yellow   { background: #fff0b8; }
+.tag-chip--blue     { background: #d6eeff; }
+
+.hero__nudge {
+  font-size: 1.4rem;
+  color: #7049a3;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.hero__signature {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  font-size: 0.88rem;
+  color: #563e34;
+}
+
+.hero__signature strong {
+  font-family: var(--font-serif);
+  font-size: 1.18rem;
+  color: #b04a78;
+}
+
+.hero__signature span {
+  font-style: italic;
+  color: #765c50;
+}
+
+/* Pulsing Glowing Enter CTA */
+.hero__cta-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.55rem;
+  margin-top: 0.3rem;
+}
+
+.hero__enter-btn {
+  padding: 1rem 2.35rem;
+  background: linear-gradient(125deg, #ff7eb3 0%, #ffa876 50%, #9b7ef2 100%);
+  background-size: 200% 200%;
+  border: 2.5px solid #ffffff;
+  border-radius: 999px;
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-size: 0.98rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  animation: btnGlowPulse 2.8s ease-in-out infinite;
+}
+
+@keyframes btnGlowPulse {
+  0%, 100% {
+    background-position: 0% 50%;
+    box-shadow: 0 10px 28px rgba(232, 111, 156, 0.4), 0 0 0 0 rgba(255, 142, 184, 0.45);
+  }
+  50% {
+    background-position: 100% 50%;
+    box-shadow: 0 14px 36px rgba(155, 126, 242, 0.45), 0 0 0 10px rgba(255, 142, 184, 0);
+  }
+}
+
+.hero__hint {
+  font-size: 0.76rem;
+  color: #765c50;
+}
+
+/* 5 Playful Floating Scrapbook Corner Cards */
+.hero__cards-orbit {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9;
+  transition: transform 0.25s ease-out;
+}
+
+.hero-polaroid {
+  pointer-events: auto;
+  position: absolute;
+  width: 175px;
+  background: #ffffff;
+  border: 1.5px solid rgba(255, 255, 255, 0.96);
+  padding: 9px 9px 13px;
+  border-radius: 16px;
+  box-shadow: 0 14px 34px rgba(107, 68, 92, 0.18);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hero-polaroid--1 { top: 4%;    left: 2%;  transform: rotate(-7deg); }
+.hero-polaroid--2 { top: 4%;    right: 2%; transform: rotate(6deg); }
+.hero-polaroid--3 { top: 44%;   left: 1%;  transform: rotate(5deg); }
+.hero-polaroid--4 { top: 45%;   right: 1%; transform: rotate(-6deg); }
+.hero-polaroid--5 { bottom: 2%; left: 4%;  transform: rotate(-4deg); }
+
+.hero-polaroid__tape {
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-3deg);
+  width: 48px;
+  height: 16px;
+  border-radius: 3px;
+  opacity: 0.92;
+  box-shadow: 0 2px 5px rgba(45, 26, 20, 0.08);
+}
+
+.hero-polaroid__badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #6b5349;
+}
+
+.hero-polaroid__img-wrap {
+  width: 100%;
+  aspect-ratio: 4/3;
+  border-radius: 10px;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+
+.hero-polaroid__img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-polaroid__emoji {
+  font-size: 2.35rem;
+}
+
+.hero-polaroid__caption {
+  font-size: 1rem;
+  color: #2d1a14;
+  line-height: 1.2;
+  text-align: center;
+}
+
+/* Secret mini note popover */
+.hero-mini-note {
+  position: fixed;
+  top: 5.1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 150;
+  background: rgba(255, 255, 255, 0.97);
+  border: 2px solid #f79ec3;
+  border-radius: 20px;
+  padding: 0.85rem 1.3rem;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  box-shadow: 0 14px 36px rgba(232, 111, 156, 0.25);
+  cursor: pointer;
+  max-width: min(92vw, 480px);
+}
+
+.hero-mini-note span { font-size: 1.5rem; flex-shrink: 0; }
+.hero-mini-note p { font-size: 0.9rem; font-weight: 500; color: #2d1a14; line-height: 1.45; }
+.hero-mini-note small { font-size: 0.7rem; color: #8c6f63; flex-shrink: 0; }
+
+/* Burst confetti */
+.hero-burst-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 180;
+  pointer-events: none;
+  display: grid;
+  place-items: center;
+}
+
+.hero-burst-piece {
+  position: absolute;
+  border-radius: 3px;
+}
+
+/* Tablet / smaller laptop / Mobile: stack 5 Polaroid cards neatly below invitation card with ZERO overlap */
+@media (max-width: 1180px) {
+  .hero__cards-orbit {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.15rem;
+    margin-top: 0.85rem;
+    width: 100%;
+    pointer-events: auto;
+  }
+
+  .hero-polaroid {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    width: 162px;
+  }
+
+  .hero-polaroid--1,
+  .hero-polaroid--3,
+  .hero-polaroid--5 { transform: rotate(-2.5deg); }
+  .hero-polaroid--2,
+  .hero-polaroid--4 { transform: rotate(2.5deg); }
+}
+
+@media (max-width: 600px) {
+  .hero { padding: 4.2rem 0.95rem 2.8rem; }
+  .hero__canvas { height: 220px; }
+  .hero__card { padding: 1.45rem 1.1rem; border-radius: 24px; }
+  .hero__story-body { font-size: 0.88rem; padding: 0.85rem 0.9rem; }
+  .hero-polaroid { width: calc(50% - 0.65rem); min-width: 138px; padding: 7px 7px 11px; }
+  .hero-polaroid__caption { font-size: 0.92rem; }
+}

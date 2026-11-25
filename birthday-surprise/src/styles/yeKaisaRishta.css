@@ -1,0 +1,442 @@
+/* ===================================================================
+   YE KAISA RISHTA HAI — Emotional & Playful Scrapbook Journal
+   =================================================================== */
+
+.rishta-section {
+  background: linear-gradient(170deg, #fff5df 0%, #ffe9f2 42%, #efe8ff 78%, #e4f3ff 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.rishta-deco {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.rishta-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(55px);
+  pointer-events: none;
+  opacity: 0.48;
+  z-index: 0;
+}
+
+.rishta-glow--warm {
+  width: 340px;
+  height: 340px;
+  background: #ffd4b8;
+  top: 8%;
+  left: -6%;
+}
+
+.rishta-glow--mist {
+  width: 360px;
+  height: 360px;
+  background: #d8c6ff;
+  bottom: 6%;
+  right: -6%;
+}
+
+.rishta-journal-wrap {
+  max-width: 820px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Shared Folio Card */
+.rishta-folio {
+  position: relative;
+  border-radius: 28px;
+  border: 2px solid rgba(255, 255, 255, 0.96);
+  padding: 2.1rem 2.2rem;
+  overflow: visible;
+}
+
+.rishta-folio--warm {
+  background: linear-gradient(160deg, #fffdf8 0%, #fff6ec 55%, #fff0f6 100%);
+  box-shadow:
+    0 18px 46px rgba(214, 152, 134, 0.16),
+    0 4px 14px rgba(45, 26, 20, 0.05);
+}
+
+.rishta-paper-rules {
+  position: absolute;
+  inset: 0;
+  border-radius: 28px;
+  background: repeating-linear-gradient(
+    transparent,
+    transparent 33px,
+    rgba(238, 135, 96, 0.065) 33px,
+    rgba(238, 135, 96, 0.065) 34px
+  );
+  pointer-events: none;
+}
+
+.rishta-washi {
+  position: absolute;
+  top: -10px;
+  width: 68px;
+  height: 20px;
+  border-radius: 4px;
+  box-shadow: 0 3px 8px rgba(45, 26, 20, 0.08);
+  z-index: 3;
+}
+
+.rishta-washi--peach {
+  left: 10%;
+  background: rgba(255, 198, 166, 0.85);
+  transform: rotate(-7deg);
+}
+
+.rishta-washi--mint {
+  right: 11%;
+  background: rgba(176, 240, 212, 0.85);
+  transform: rotate(6deg);
+}
+
+.rishta-washi--lavender {
+  left: 50%;
+  margin-left: -34px;
+  background: rgba(206, 186, 255, 0.88);
+  transform: rotate(-2deg);
+}
+
+.rishta-folio__top {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.rishta-act-badge {
+  display: inline-block;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.34rem 0.95rem;
+  border-radius: 999px;
+}
+
+.rishta-act-badge--warm {
+  color: #b4532a;
+  background: #ffe8db;
+  border: 1px solid rgba(238, 135, 96, 0.28);
+}
+
+.rishta-act-badge--emotional {
+  color: #6b3b82;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(154, 126, 224, 0.3);
+}
+
+.rishta-corner-doodle {
+  font-size: 1.35rem;
+  user-select: none;
+}
+
+/* Act I Stream */
+.rishta-stream {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 0.72rem;
+}
+
+.rishta-entry-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.72rem;
+}
+
+.rishta-para {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-size: 0.96rem;
+  color: #3d241c;
+  line-height: 1.68;
+}
+
+.rishta-para__doodle {
+  flex-shrink: 0;
+  font-size: 1rem;
+  margin-top: 2px;
+  opacity: 0.85;
+}
+
+.rishta-para--hand {
+  font-family: var(--font-hand);
+  font-size: 1.34rem;
+  line-height: 1.48;
+  color: #7c3556;
+  font-weight: 600;
+  background: linear-gradient(120deg, rgba(255, 224, 238, 0.45) 0%, rgba(255, 244, 198, 0.45) 100%);
+  padding: 0.68rem 0.95rem;
+  border-radius: 14px;
+  border-left: 3px solid #e86f9c;
+}
+
+.rishta-break {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0 0.8rem;
+}
+
+.rishta-break__line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(232, 111, 156, 0.2), transparent);
+}
+
+.rishta-break__glyph {
+  font-size: 0.72rem;
+  color: #d982a3;
+  opacity: 0.7;
+}
+
+/* Tone Shift Divider between Part I & Part II */
+.rishta-shift {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem 0.5rem;
+}
+
+.rishta-shift__line {
+  flex: 1;
+  height: 2px;
+  border-radius: 99px;
+  background: linear-gradient(90deg, rgba(255, 192, 166, 0.35), rgba(154, 126, 224, 0.55), rgba(132, 197, 255, 0.35));
+}
+
+.rishta-shift__center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.28rem;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1.5px solid rgba(154, 126, 224, 0.25);
+  border-radius: 999px;
+  padding: 0.55rem 1.45rem;
+  box-shadow: 0 8px 24px rgba(154, 126, 224, 0.16);
+  text-align: center;
+}
+
+.rishta-shift__hearts {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.15rem;
+}
+
+.rishta-shift__whisper {
+  font-size: 1.12rem;
+  color: #6b3b82;
+  font-weight: 600;
+}
+
+/* Act II: Emotional Twilight Journal */
+.rishta-folio--emotional {
+  background: linear-gradient(155deg, #fbf7ff 0%, #f1ebff 52%, #fff0f8 100%);
+  box-shadow:
+    0 20px 52px rgba(154, 126, 224, 0.2),
+    0 4px 16px rgba(45, 26, 20, 0.05),
+    inset 0 0 32px rgba(255, 255, 255, 0.65);
+}
+
+.rishta-emotional-lead {
+  position: relative;
+  z-index: 2;
+  font-size: clamp(1.38rem, 3vw, 1.9rem);
+  font-style: italic;
+  color: #6b3b82;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1.5px dashed rgba(154, 126, 224, 0.28);
+}
+
+.rishta-emotional-stream {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 0.95rem;
+  padding-left: 0.35rem;
+}
+
+.rishta-thread-line {
+  position: absolute;
+  top: 7.4rem;
+  bottom: 7.5rem;
+  left: 2.75rem;
+  width: 2px;
+  background: linear-gradient(180deg, rgba(232, 111, 156, 0.35), rgba(154, 126, 224, 0.45), rgba(132, 197, 255, 0.3));
+  border-radius: 99px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.rishta-emotional-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  position: relative;
+  z-index: 2;
+}
+
+.rishta-thread-dot {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1.5px solid rgba(154, 126, 224, 0.45);
+  display: grid;
+  place-items: center;
+  font-size: 0.72rem;
+  color: #9a7ee0;
+  margin-top: 3px;
+  box-shadow: 0 3px 10px rgba(154, 126, 224, 0.18);
+}
+
+.rishta-emotional-para {
+  font-size: 0.97rem;
+  color: #3a233d;
+  line-height: 1.72;
+}
+
+.rishta-emotional-para--closing {
+  font-size: 1.4rem;
+  line-height: 1.45;
+  color: #8b3668;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1.5px solid rgba(232, 111, 156, 0.25);
+  border-radius: 18px;
+  padding: 0.85rem 1.15rem;
+  box-shadow: 0 8px 22px rgba(232, 111, 156, 0.12);
+}
+
+/* Ending Visual */
+.rishta-finale {
+  margin-top: 1.6rem;
+  padding-top: 1.2rem;
+  border-top: 1px dashed rgba(154, 126, 224, 0.26);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.45rem;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.rishta-finale__orbs {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  background: rgba(255, 255, 255, 0.88);
+  padding: 0.45rem 1.25rem;
+  border-radius: 999px;
+  border: 1.5px solid rgba(232, 111, 156, 0.28);
+  box-shadow: 0 8px 24px rgba(154, 126, 224, 0.18);
+}
+
+.rishta-orb {
+  font-size: 1.25rem;
+  filter: drop-shadow(0 2px 6px rgba(232, 111, 156, 0.3));
+}
+
+.rishta-orb-link {
+  font-size: 1.15rem;
+}
+
+.rishta-finale__caption {
+  font-size: 1.22rem;
+  color: #6b3b82;
+  font-weight: 600;
+}
+
+/* Optional section photos */
+.rishta-photos-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+}
+
+.rishta-polaroid {
+  width: 170px;
+  background: #ffffff;
+  padding: 8px 8px 12px;
+  border-radius: 14px;
+  box-shadow: 0 10px 26px rgba(154, 126, 224, 0.18);
+  transform: rotate(var(--tilt, 0deg));
+  text-align: center;
+}
+
+.rishta-polaroid img,
+.rishta-polaroid video {
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+
+.rishta-polaroid p {
+  font-size: 1rem;
+  color: #3d241c;
+  margin-top: 5px;
+}
+
+@media (max-width: 720px) {
+  .rishta-folio {
+    padding: 1.55rem 1.15rem;
+    border-radius: 22px;
+  }
+
+  .rishta-thread-line {
+    left: 1.75rem;
+    top: 6.2rem;
+  }
+
+  .rishta-para {
+    font-size: 0.91rem;
+  }
+
+  .rishta-para--hand {
+    font-size: 1.2rem;
+    padding: 0.58rem 0.8rem;
+  }
+
+  .rishta-emotional-para {
+    font-size: 0.92rem;
+  }
+
+  .rishta-emotional-para--closing {
+    font-size: 1.24rem;
+    padding: 0.72rem 0.9rem;
+  }
+
+  .rishta-shift {
+    padding: 1.15rem 0;
+  }
+
+  .rishta-shift__center {
+    padding: 0.48rem 1rem;
+  }
+}

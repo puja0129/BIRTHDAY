@@ -1,0 +1,237 @@
+.care-section {
+  background: linear-gradient(160deg, #fff5eb 0%, #fff0f7 50%, #e7f6ff 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.care-deco {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.58;
+}
+
+/* When you need me tabs */
+.needme-wrapper {
+  max-width: 820px;
+  margin: 0 auto 3.2rem;
+}
+
+.needme-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-bottom: 1.25rem;
+}
+
+.needme-tab {
+  padding: 0.62rem 1.15rem;
+  border-radius: 999px;
+  border: 1.5px solid rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.85);
+  color: #4c372d;
+  font-size: 0.84rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(45, 26, 20, 0.06);
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.needme-tab:hover {
+  transform: translateY(-2px);
+}
+
+.needme-tab--active {
+  background: var(--tab-bg, #ffe8f1);
+  border-color: var(--tab-accent, #e86f9c);
+  color: #2d1a14;
+  box-shadow: 0 8px 20px color-mix(in srgb, var(--tab-accent) 25%, transparent);
+}
+
+.needme-letter-card {
+  border-radius: 24px;
+  padding: 2rem 2.2rem;
+  border: 2px solid #ffffff;
+  box-shadow: 0 14px 36px rgba(173, 128, 164, 0.16);
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.needme-letter-card__title {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  color: var(--accent, #b04a78);
+}
+
+.needme-letter-card__msg {
+  font-size: 1rem;
+  color: #2d1a14;
+  line-height: 1.75;
+}
+
+.needme-letter-card__sig {
+  align-self: flex-end;
+  font-size: 1.35rem;
+  color: #4c372d;
+  font-weight: 600;
+}
+
+/* Split grid: Unwritten rules notepad + Surprise Jar */
+.care-split-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 2rem;
+  align-items: stretch;
+  max-width: 1020px;
+  margin: 0 auto;
+}
+
+.rules-notepad {
+  background: #fffdf6;
+  border-radius: 24px;
+  border: 2px solid #ffffff;
+  padding: 2.2rem 1.8rem 1.8rem;
+  position: relative;
+  box-shadow: 0 14px 36px rgba(173, 128, 164, 0.14);
+}
+
+.rules-notepad__spiral {
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  top: -8px;
+  left: 2rem;
+  right: 2rem;
+}
+
+.rules-notepad__spiral span {
+  width: 14px;
+  height: 18px;
+  border-radius: 99px;
+  background: linear-gradient(180deg, #ff9ebb, #b58ef6);
+  border: 2px solid #ffffff;
+}
+
+.rules-notepad__title {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  color: #2d1a14;
+  margin-bottom: 0.3rem;
+}
+
+.rules-notepad__sub {
+  font-size: 0.84rem;
+  color: #765c50;
+  margin-bottom: 1rem;
+}
+
+.rules-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.rule-item {
+  width: 100%;
+  text-align: left;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  padding: 0.7rem 0.9rem;
+  border-radius: 12px;
+  background: #fff8f2;
+  border: 1px solid rgba(232, 111, 156, 0.16);
+  color: #3d241c;
+  font-size: 0.9rem;
+  line-height: 1.48;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.rule-item--checked {
+  background: linear-gradient(135deg, #fff1f7, #f1edff);
+  border-color: rgba(154, 126, 224, 0.32);
+}
+
+.rule-check {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+  border-radius: 6px;
+  background: #ffffff;
+  border: 1.5px solid #e86f9c;
+  display: grid;
+  place-items: center;
+  color: #b04a78;
+}
+
+/* Random surprise jar */
+.surprise-box {
+  background: linear-gradient(155deg, #ffeef6 0%, #eef7ff 100%);
+  border: 2px solid #ffffff;
+  border-radius: 24px;
+  padding: 1.8rem 1.5rem;
+  box-shadow: 0 14px 36px rgba(139, 126, 200, 0.16);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  gap: 1.2rem;
+}
+
+.surprise-box__eyebrow {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #b04a78;
+  background: #ffffff;
+  padding: 0.3rem 0.85rem;
+  border-radius: 999px;
+}
+
+.surprise-box__title {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  color: #2d1a14;
+}
+
+.surprise-card {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 1.4rem 1.2rem;
+  border: 1.5px dashed rgba(154, 126, 224, 0.35);
+  box-shadow: 0 8px 20px rgba(45, 26, 20, 0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.surprise-card__tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #6f4ca8;
+  background: #f2ebff;
+  padding: 2px 10px;
+  border-radius: 999px;
+}
+
+.surprise-card__text {
+  font-size: 1.42rem;
+  color: #2d1a14;
+  line-height: 1.35;
+}
+
+.surprise-btn {
+  width: 100%;
+}
+
+@media (max-width: 820px) {
+  .care-split-grid { grid-template-columns: 1fr; }
+  .needme-letter-card { padding: 1.45rem; }
+}

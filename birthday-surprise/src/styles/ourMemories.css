@@ -1,0 +1,429 @@
+.om-section {
+  background: linear-gradient(150deg, #fffaf2 0%, #fff0fa 50%, #eef8ff 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.om-deco {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.65;
+}
+
+/* Toolbar */
+.om-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  max-width: 1020px;
+  margin: 0 auto 1.8rem;
+}
+
+.om-mode-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.om-mode-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.52rem 1rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1.5px solid rgba(154, 126, 224, 0.25);
+  color: #563e34;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.om-mode-btn--active {
+  background: linear-gradient(135deg, #ff8eb8, #a78bfa);
+  color: #ffffff;
+  border-color: transparent;
+  box-shadow: 0 8px 20px rgba(232, 111, 156, 0.25);
+}
+
+.om-add-media-btn {
+  padding: 0.58rem 1.25rem;
+  font-size: 0.82rem;
+}
+
+/* ── Mode 1: Two-Page Open Scrapbook Flipbook ─────────────────────── */
+.om-book-wrap {
+  max-width: 1020px;
+  margin: 0 auto;
+}
+
+.om-book {
+  position: relative;
+  background: #f5e6ef;
+  border: 3px solid #ffffff;
+  border-radius: 28px;
+  padding: 0.75rem;
+  box-shadow: 0 22px 58px rgba(173, 128, 164, 0.22);
+}
+
+.om-book-spine {
+  position: absolute;
+  top: 0.75rem;
+  bottom: 0.75rem;
+  left: 50%;
+  width: 14px;
+  margin-left: -7px;
+  background: linear-gradient(90deg, rgba(160, 120, 140, 0.18), rgba(255, 255, 255, 0.7), rgba(160, 120, 140, 0.18));
+  z-index: 4;
+  pointer-events: none;
+  border-radius: 8px;
+}
+
+.om-book-spread {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.om-page {
+  background: var(--spread-bg, #fffcf9);
+  border-radius: 20px;
+  padding: 1.55rem 1.45rem;
+  border: 1.5px solid rgba(255, 255, 255, 0.95);
+  box-shadow: inset 0 0 24px rgba(173, 128, 164, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-height: 410px;
+}
+
+.om-page-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.om-chapter-pill {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #b04a78;
+  background: #ffffff;
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid rgba(232, 111, 156, 0.22);
+  align-self: flex-start;
+}
+
+.om-page-doodle { font-size: 1.45rem; }
+
+.om-date-tag {
+  font-size: 1.15rem;
+  color: #9a7ee0;
+  font-weight: 600;
+}
+
+.om-page-title {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  color: #2d1a14;
+  line-height: 1.2;
+}
+
+.om-page-story {
+  font-size: 0.92rem;
+  color: #4c372d;
+  line-height: 1.6;
+}
+
+.om-polaroid-slot,
+.om-collage-frame {
+  position: relative;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 8px 8px 11px;
+  box-shadow: 0 10px 26px rgba(173, 128, 164, 0.16);
+  cursor: pointer;
+  transform: rotate(var(--tilt, -1.5deg));
+  margin-top: auto;
+}
+
+.om-tape {
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  margin-left: -24px;
+  width: 48px;
+  height: 15px;
+  background: rgba(255, 208, 223, 0.85);
+  border-radius: 3px;
+  z-index: 2;
+}
+
+.om-media-tile {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.om-media-el {
+  width: 100%;
+  aspect-ratio: 4 / 3.1;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+  background: #fff8f5;
+}
+
+.om-media-cap {
+  font-size: 1rem;
+  color: #3d241c;
+  text-align: center;
+  line-height: 1.25;
+}
+
+.om-collage-stack {
+  display: grid;
+  gap: 0.85rem;
+  flex: 1;
+}
+
+.om-collage-stack--n2 { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: center; }
+
+.om-sticky-quote {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: #fff4c4;
+  border: 1.5px dashed rgba(221, 168, 46, 0.55);
+  border-radius: 14px;
+  padding: 0.7rem 0.95rem;
+}
+
+.om-sticky-quote p {
+  font-size: 1.15rem;
+  color: #4c372d;
+  line-height: 1.25;
+}
+
+.om-empty-slot {
+  flex: 1;
+  min-height: 190px;
+  border: 2px dashed rgba(232, 111, 156, 0.4);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 0.4rem;
+  padding: 1rem;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.65);
+  color: #6b5349;
+}
+
+.om-empty-slot span { font-size: 2.2rem; }
+.om-empty-slot p { font-size: 0.82rem; }
+
+/* Page-Turn Navigation Bar */
+.om-book-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1.3rem;
+}
+
+.om-page-dots {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+
+.om-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(232, 111, 156, 0.28);
+  cursor: pointer;
+}
+
+.om-dot--active {
+  width: 24px;
+  border-radius: 999px;
+  background: #e86f9c;
+}
+
+.om-page-count {
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: #6b5349;
+  margin-left: 0.35rem;
+}
+
+/* ── Mode 2: Memory Slides Player ─────────────────────────────────── */
+.om-slides-wrap {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.om-slide-stage {
+  padding: 1.3rem;
+  background: rgba(255, 255, 255, 0.92);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.om-slide-frame {
+  border-radius: 16px;
+  overflow: hidden;
+  background: #fff8f4;
+  display: grid;
+  place-items: center;
+  min-height: 320px;
+}
+
+.om-slide-media {
+  width: 100%;
+  max-height: 460px;
+  object-fit: contain;
+  display: block;
+}
+
+.om-slide-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+}
+
+.om-slide-type {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #9a7ee0;
+}
+
+.om-slide-cap {
+  font-size: 1.3rem;
+  color: #2d1a14;
+}
+
+.om-slide-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.om-play-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.38rem;
+  padding: 0.52rem 1rem;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(135deg, #ff8eb8, #9a7ee0);
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.om-thumb-strip {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding-bottom: 0.25rem;
+}
+
+.om-thumb {
+  width: 58px;
+  height: 58px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  overflow: hidden;
+  padding: 0;
+  cursor: pointer;
+  opacity: 0.68;
+}
+
+.om-thumb--active {
+  border-color: #e86f9c;
+  opacity: 1;
+}
+
+.om-thumb img,
+.om-thumb video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── Mode 3: Scrapbook Timeline Ribbon ────────────────────────────── */
+.om-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1.45rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.om-tl-card {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 1.25rem;
+  background: var(--tl-bg, #ffffff);
+  border: 2px solid #ffffff;
+  border-radius: 24px;
+  padding: 1.4rem;
+  box-shadow: 0 12px 32px rgba(173, 128, 164, 0.14);
+  align-items: center;
+}
+
+.om-tl-card--right .om-tl-text { order: 2; }
+
+.om-tl-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.om-tl-text h3 { font-family: var(--font-serif); font-size: 1.4rem; color: #2d1a14; }
+.om-tl-text p { font-size: 0.9rem; color: #4c372d; line-height: 1.6; }
+.om-tl-text small { font-size: 1.08rem; color: #b04a78; }
+
+.om-tl-media-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.75rem;
+}
+
+.om-tl-polaroid {
+  background: #ffffff;
+  padding: 6px 6px 9px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(45, 26, 20, 0.1);
+  cursor: pointer;
+}
+
+@media (max-width: 820px) {
+  .om-book-spread { grid-template-columns: 1fr; }
+  .om-book-spine { display: none; }
+  .om-page { min-height: auto; }
+  .om-tl-card { grid-template-columns: 1fr; }
+  .om-tl-card--right .om-tl-text { order: 0; }
+}

@@ -1,0 +1,93 @@
+/* SectionDropZone — Pastel Highlight & Quick Upload Pill */
+.section-drop-zone {
+  position: relative;
+  border-radius: 24px;
+  transition: outline 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.section-drop-zone--active {
+  outline: 3px dashed #e86f9c;
+  outline-offset: 8px;
+  background: rgba(255, 214, 232, 0.22);
+  box-shadow: 0 0 36px rgba(232, 111, 156, 0.25);
+}
+
+.section-drop-zone__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 236, 245, 0.88), rgba(232, 244, 255, 0.88));
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 22px;
+  pointer-events: none;
+  z-index: 25;
+}
+
+.section-drop-zone__badge {
+  background: #ffffff;
+  border: 2px dashed #e86f9c;
+  border-radius: 999px;
+  padding: 0.9rem 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  box-shadow: 0 10px 30px rgba(232, 111, 156, 0.24);
+}
+
+.section-drop-zone__badge span {
+  font-size: 1.4rem;
+}
+
+.section-drop-zone__badge p {
+  font-family: var(--font-hand);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #2d1a14;
+}
+
+.section-drop-zone__toolbar {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.4rem;
+}
+
+.section-drop-zone__add-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.5rem 1.05rem;
+  border-radius: 999px;
+  border: 1.5px dashed rgba(154, 126, 224, 0.45);
+  background: rgba(255, 255, 255, 0.72);
+  color: #563e34;
+  font-size: 0.78rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(8px);
+}
+
+.section-drop-zone__add-btn:hover {
+  background: #ffffff;
+  border-color: #e86f9c;
+  color: #2d1a14;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(232, 111, 156, 0.16);
+}
+
+.section-drop-zone__toast {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 600;
+  background: linear-gradient(135deg, #ff8eb8, #a48ee6);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 0.6rem 1.3rem;
+  border-radius: 999px;
+  box-shadow: 0 8px 24px rgba(154, 126, 224, 0.35);
+}
